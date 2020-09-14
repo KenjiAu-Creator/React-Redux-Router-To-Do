@@ -13,7 +13,11 @@ import ToDos from './component/ToDos';
  * our global data exists. We pass in the reducer
  * so it will know how to handle any actions (requests)
  */
-const store = createStore(toDosReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(
+  toDosReducer,
+  // If we want to use the Redux DevTools, add this arguement as well!
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
 
 // WE can run instructions every time the state/store is 
 // updated by using the store's "subscribe" method.
