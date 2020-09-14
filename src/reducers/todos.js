@@ -31,7 +31,7 @@ const toDosReducer = (state = [], action) => {
       {
         const updateToDoList = state.filter(
           // The array will be composed only ofitems that do not have the ID we passed.
-          toDo => toDo.id != action.payload 
+          toDo => toDo.id !== action.payload 
         );
         // Return / overwrite the state with this new array of To-Dos
         return updateToDoList;

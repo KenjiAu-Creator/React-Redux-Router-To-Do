@@ -34,4 +34,4 @@ const removeToDo = id => {
   };
 };
 
-export { addNewToDo };
+export { addNewToDo, removeToDo };
