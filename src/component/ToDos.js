@@ -1,15 +1,25 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+// up a directory use ..
+// same one use .
+import { addNewToDo } from '../actions/todos';
 
-function ToDos( props )
-{
+function ToDos(props) {
   // Local state to keep track of this component
   // form field
 
   // Add a submit function
   const submitToDo = event => {
     event.preventDefault(); // Prevent the page from reloading!
+    // Form updates so that we use setNewTask
+    // The LOCAL state is updated to newTask
+    // We then pass that variable / state into addNewToDo which is an action
+    // We then pass that action into dispatch which is the reducer.
+    // It then updates our store.
 
+    props.dispatch(addNewToDo(newTask));
+    // The props know which store to access because of Provider tag in the Index.
+    // Because on the Provider and the connect **
   }
 
   const [newTask, setNewTask] = useState('');
@@ -18,11 +28,11 @@ function ToDos( props )
       <h2>To-Do List</h2>
       <form onSubmit={submitToDo}>
         <label htmlFor="task">Enter New Task:</label>
-        <input 
+        <input
           id="task"
           type="text"
           value={newTask}
-          onChange={event => {setNewTask(event.target.value) } }/>
+          onChange={event => { setNewTask(event.target.value) }} />
         <input type="submit" value="Add New To-Do" />
       </form>
       <ul>
