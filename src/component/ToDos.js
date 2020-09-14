@@ -8,7 +8,7 @@ function ToDos(props) {
   // Local state to keep track of this component
   // form field
   const [newTask, setNewTask] = useState('');
-  
+
   // Add a submit function
   const submitToDo = event => {
     event.preventDefault(); // Prevent the page from reloading!
@@ -21,6 +21,8 @@ function ToDos(props) {
     props.dispatch(addNewToDo(newTask));
     // The props know which store to access because of Provider tag in the Index.
     // Because on the Provider and the connect **
+
+    setNewTask( "" );
   }
 
   return (
