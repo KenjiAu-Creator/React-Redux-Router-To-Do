@@ -21,6 +21,8 @@
       // Create a COPY of the original state array
       const newToDoList = [...state];
       newToDoList.push(newTask);
+      // Return the updated state (overwrites the state.)
+      // The return will overwrite the previous state passed into the reducer!
       return newToDoList;
     }
     // By default, make no change.
