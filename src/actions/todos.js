@@ -24,3 +24,5 @@
      payload: toDoContent
    }
  }
+
+ export { addNewToDo };
